@@ -1,135 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Happy 18th Birthday Debu 💙</title>
 
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-    scroll-behavior: smooth;
-}
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to bottom, #b3e5fc, #e1f5fe);
+        text-align: center;
+        color: #0d47a1;
+        overflow-x: hidden;
+    }
 
-body {
-    background: linear-gradient(135deg, #cfe9ff, #6fb6ff, #1e3a8a);
-    color: white;
-    overflow-x: hidden;
-}
+    .hero {
+        padding: 70px 20px;
+    }
 
-/* Floating hearts */
-.heart {
-    position: fixed;
-    bottom: -10px;
-    color: #fff;
-    font-size: 20px;
-    animation: floatUp 6s linear infinite;
-    opacity: 0.7;
-}
+    .hero h1 {
+        font-size: 40px;
+    }
 
-@keyframes floatUp {
-    0% {transform: translateY(0) scale(1);}
-    100% {transform: translateY(-100vh) scale(1.5); opacity: 0;}
-}
+    section {
+        padding: 40px 20px;
+    }
 
-/* Sections */
-section {
-    padding: 80px 20px;
-    text-align: center;
-}
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        max-width: 800px;
+        margin: auto;
+    }
 
-/* Hero */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
+    .gallery img {
+        width: 100%;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
 
-.hero h1 {
-    font-size: 3rem;
-    text-shadow: 0 0 20px rgba(255,255,255,0.6);
-    animation: fadeIn 2s ease-in-out;
-}
+    .card {
+        background: white;
+        max-width: 600px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 
-.hero p {
-    margin-top: 10px;
-    font-size: 1.2rem;
-}
+    footer {
+        padding: 20px;
+        background: #bbdefb;
+    }
 
-/* Button */
-.btn {
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: white;
-    color: #1e3a8a;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
+    /* hearts */
+    .heart {
+        position: fixed;
+        top: -10px;
+        font-size: 20px;
+        animation: fall linear forwards;
+        pointer-events: none;
+    }
 
-.btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px white;
-}
+    @keyframes fall {
+        to {
+            transform: translateY(100vh);
+            opacity: 0;
+        }
+    }
 
-/* Gallery */
-.gallery img {
-    width: 180px;
-    height: 180px;
-    object-fit: cover;
-    margin: 10px;
-    border-radius: 15px;
-    border: 3px solid white;
-    transition: 0.3s;
-}
+    /* LETTER */
+    .envelope {
+        width: 200px;
+        height: 130px;
+        background: #90caf9;
+        margin: auto;
+        cursor: pointer;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
 
-.gallery img:hover {
-    transform: scale(1.1);
-}
-
-/* Card */
-.card {
-    background: rgba(255,255,255,0.15);
-    padding: 30px;
-    margin: auto;
-    width: 80%;
-    border-radius: 20px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 0 20px rgba(255,255,255,0.2);
-}
-
-/* Music */
-audio {
-    margin-top: 20px;
-}
-
-/* Footer */
-footer {
-    padding: 20px;
-    text-align: center;
-    background: rgba(0,0,0,0.3);
-}
-
-/* Animation */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
+    .letter {
+        display: none;
+        background: white;
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
 </style>
 </head>
 
 <body>
 
-<!-- Floating hearts -->
+<!-- HEARTS -->
 <script>
 function createHeart() {
     const heart = document.createElement("div");
@@ -138,60 +106,57 @@ function createHeart() {
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
     document.body.appendChild(heart);
-
     setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 500);
+
+// OPEN LETTER
+function openLetter() {
+    document.getElementById("letter").style.display = "block";
+}
 </script>
 
-<!-- HERO SECTION -->
+<!-- HERO -->
 <section class="hero">
     <h1>Happy 18th Birthday, Debu 💙✨</h1>
-    <p>Wishing you love, happiness, and endless dreams 🎉🌸</p>
+    <p>Wishing you love, happiness, and endless dreams 🎉</p>
 
-    <!-- CHANGE YOUR LINK HERE -->
-    <a class="btn" href="https://pazdebut.com" target="_blank">
-        Open My Gift 💙
-    </a>
-
-    <!-- MUSIC PLAYER (ADD YOUR SONG FILE OR LINK) -->
+    <!-- AUDIO -->
     <audio controls autoplay loop>
-        <!-- CHANGE MUSIC SOURCE HERE -->
-        <source src="your-music.mp3" type="audio/mp3">
-    </audio>
+        <source src="https://www.youtube.com/watch?v=u57HBBO1zV4" type="audio/mpeg">
+</audio>
 </section>
 
 <!-- GALLERY -->
 <section>
-    <h2>Memories 💙✨</h2>
+    <h2>Memories 💙</h2>
     <div class="gallery">
-
-        <!-- ADD YOUR IMAGES HERE -->
         <img src="image1.jpg" alt="photo1">
-        <img src="image2.jpg" alt="photo2">
+        <img src="paz.jpg" width="300">
         <img src="image3.jpg" alt="photo3">
         <img src="image4.jpg" alt="photo4">
-
     </div>
 </section>
 
-<!-- MESSAGE CARD -->
+<!-- LETTER -->
 <section>
-    <div class="card">
-        <h2>To You, Debu 💙</h2>
+    <h2>💌 Letter for You</h2>
+
+    <div class="envelope" onclick="openLetter()"></div>
+
+    <div class="letter" id="letter">
+        <h3>To You, Debu 💙</h3>
         <p>
-            <!-- CHANGE THIS MESSAGE -->
-            Happy 18th Birthday! 🎂✨<br><br>
-            You are someone truly special. I hope your life becomes filled with
-            happiness, success, and beautiful memories. Always remember that you
-            are loved more than you know 💙🌸
+            Happy 18th Birthday 🎂✨<br><br>
+            You are truly special. I hope your life becomes full of happiness,
+            success, and love. Always remember you are appreciated more than you know 💙
         </p>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    Made with love for you 💙✨
+    Made with love 💙
 </footer>
 
 </body>
