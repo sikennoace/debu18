@@ -2,100 +2,94 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy 18th Birthday Debu 💙</title>
+<title>Happy 18th Birthday 💙</title>
 
 <style>
     body {
         margin: 0;
         font-family: Arial, sans-serif;
-        background: linear-gradient(to bottom, #b3e5fc, #e1f5fe);
+        background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
         text-align: center;
-        color: #0d47a1;
         overflow-x: hidden;
     }
 
-    .hero {
-        padding: 70px 20px;
+    h1, h2, p {
+        color: #1f3b57;
     }
 
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    section {
-        padding: 40px 20px;
-    }
-
-    .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 10px;
-        max-width: 800px;
-        margin: auto;
-    }
-
-    .gallery img {
-        width: 100%;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .card {
-        background: white;
-        max-width: 600px;
-        margin: auto;
-        padding: 20px;
-        border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-
-    footer {
-        padding: 20px;
-        background: #bbdefb;
-    }
-
-    /* hearts */
+    /* HEARTS */
     .heart {
         position: fixed;
         top: -10px;
         font-size: 20px;
         animation: fall linear forwards;
-        pointer-events: none;
     }
 
     @keyframes fall {
         to {
-            transform: translateY(100vh);
-            opacity: 0;
+            transform: translateY(110vh);
         }
     }
 
+    /* GIF ROW */
+    .gif-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin: 15px 0;
+        flex-wrap: wrap;
+    }
+
+    .gif-row img {
+        width: 150px;
+        border-radius: 15px;
+    }
+
     /* LETTER */
+    .letter-container {
+        margin: 40px 0;
+    }
+
     .envelope {
-        width: 200px;
-        height: 130px;
-        background: #90caf9;
-        margin: auto;
+        width: 90px;
+        height: 90px;
+        background: #ffb6c1;
+        margin: 10px auto;
+        border-radius: 15px;
         cursor: pointer;
-        border-radius: 10px;
-        position: relative;
-        box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 40px;
     }
 
     .letter {
         display: none;
         background: white;
-        max-width: 500px;
-        margin: 20px auto;
         padding: 20px;
         border-radius: 15px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        width: 70%;
+        margin: auto;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        color: #333;
+    }
+
+    footer {
+        margin-top: 50px;
+        padding: 15px;
+        color: #1f3b57;
     }
 </style>
 </head>
 
 <body>
+
+<!-- AUDIO -->
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/u57HBBO1zV4?autoplay=1&loop=1&playlist=u57HBBO1zV4"
+frameborder="0"
+allow="autoplay">
+</iframe>
 
 <!-- HEARTS -->
 <script>
@@ -103,9 +97,12 @@ function createHeart() {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.innerHTML = "💙";
+
     heart.style.left = Math.random() * 100 + "vw";
     heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
     document.body.appendChild(heart);
+
     setTimeout(() => heart.remove(), 6000);
 }
 setInterval(createHeart, 500);
@@ -117,46 +114,45 @@ function openLetter() {
 </script>
 
 <!-- HERO -->
-<section class="hero">
-    <h1>Happy 18th Birthday, Debu 💙✨</h1>
-    <p>Wishing you love, happiness, and endless dreams 🎉</p>
+<h1>Happy 18th Birthday, Ate Paz! 💙✨</h1>
+<p>Wishing you love, happiness, and endless dreams 🎉</p>
 
-    <!-- AUDIO -->
-    <audio controls autoplay loop>
-        <source src="https://www.youtube.com/watch?v=u57HBBO1zV4" type="audio/mpeg">
-</audio>
-</section>
-
-<!-- GALLERY -->
-<section>
-    <h2>Memories 💙</h2>
-    <div class="gallery">
-        <img src="image1.jpg" alt="photo1">
-        <img src="paz.jpg" width="300">
-        <img src="image3.jpg" alt="photo3">
-        <img src="image4.jpg" alt="photo4">
-    </div>
-</section>
+<!-- TOP GIFS -->
+<h2>Pibertday 💙</h2>
+<div class="gif-row">
+<img src="https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif">
+    <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
+</div>
 
 <!-- LETTER -->
-<section>
+<div class="letter-container">
     <h2>💌 Letter for You</h2>
 
-    <div class="envelope" onclick="openLetter()"></div>
+    <div class="envelope" onclick="openLetter()">💌</div>
 
     <div class="letter" id="letter">
-        <h3>To You, Debu 💙</h3>
+        <h3>Happy 18th Birthday M6/Champion 🎂✨ 💙</h3>
         <p>
-            Happy 18th Birthday 🎂✨<br><br>
-            You are truly special. I hope your life becomes full of happiness,
-            success, and love. Always remember you are appreciated more than you know 💙
+          <br><br>
+
+
+You are such a great volleyball player and I love the fact that you work hard and put so much passion in everything you do on the field.
+            Have a good day this is your day, sayo ang araw na ’to! PAKITA MO NA IBA KA!
+            💙 Now that you are 18, you can now MAKULONG because you are now grown-up but more than that, I want you to continue with your dreams teh, be stronger, and never lose that fighting spirit.
+            😭 but more importantly, I hope you use this new chapter to keep chasing your dreams, grow stronger, and never lose that fighting spirit. 💙
         </p>
     </div>
-</section>
+</div>
+
+<!-- BOTTOM GIFS -->
+<div class="gif-row">
+<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+    <img src="https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif">
+</div>
 
 <!-- FOOTER -->
 <footer>
-    Made with love 💙
+    From kupal rikzards :} 💙
 </footer>
 
 </body>
