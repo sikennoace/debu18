@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Happy 18th Birthday 💙</title>
 
 <style>
@@ -11,6 +13,7 @@
         background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
         text-align: center;
         overflow-x: hidden;
+        padding: 10px;
     }
 
     h1, h2, p {
@@ -21,7 +24,7 @@
     .heart {
         position: fixed;
         top: -10px;
-        font-size: 20px;
+        font-size: 18px;
         animation: fall linear forwards;
     }
 
@@ -31,17 +34,18 @@
         }
     }
 
-    /* GIF ROW */
+    /* GIF ROW (MOBILE FRIENDLY) */
     .gif-row {
         display: flex;
         justify-content: center;
-        gap: 20px;
+        gap: 10px;
         margin: 15px 0;
         flex-wrap: wrap;
     }
 
     .gif-row img {
-        width: 150px;
+        width: 45%;
+        max-width: 160px;
         border-radius: 15px;
     }
 
@@ -51,8 +55,8 @@
     }
 
     .envelope {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
         background: #ffb6c1;
         margin: 10px auto;
         border-radius: 15px;
@@ -60,36 +64,41 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 40px;
+        font-size: 35px;
     }
 
     .letter {
         display: none;
         background: white;
-        padding: 20px;
+        padding: 15px;
         border-radius: 15px;
-        width: 70%;
+        width: 90%;
         margin: auto;
         box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         color: #333;
+        font-size: 14px;
     }
 
     footer {
         margin-top: 50px;
         padding: 15px;
         color: #1f3b57;
+        font-size: 13px;
+    }
+
+    audio {
+        width: 90%;
+        margin-top: 10px;
     }
 </style>
 </head>
 
 <body>
 
-<!-- AUDIO -->
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/u57HBBO1zV4?autoplay=1&loop=1&playlist=u57HBBO1zV4"
-frameborder="0"
-allow="autoplay">
-</iframe>
+<!-- AUDIO (WORKING ON PHONE) -->
+<audio controls autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
 
 <!-- HEARTS -->
 <script>
@@ -107,24 +116,21 @@ function createHeart() {
 }
 setInterval(createHeart, 500);
 
-// OPEN LETTER
 function openLetter() {
     document.getElementById("letter").style.display = "block";
 }
 </script>
 
-<!-- HERO -->
 <h1>Happy 18th Birthday, Ate Paz! 💙✨</h1>
 <p>Wishing you love, happiness, and endless dreams 🎉</p>
 
-<!-- TOP GIFS -->
 <h2>Pibertday 💙</h2>
+
 <div class="gif-row">
-<img src="https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif">
+    <img src="https://media.giphy.com/media/13borq7Zo2kulO/giphy.gif">
     <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif">
 </div>
 
-<!-- LETTER -->
 <div class="letter-container">
     <h2>💌 Letter for You</h2>
 
@@ -133,26 +139,24 @@ function openLetter() {
     <div class="letter" id="letter">
         <h3>Happy 18th Birthday M6/Champion 🎂✨ 💙</h3>
         <p>
-          <br><br>
+            You are such a great volleyball player and I admire your hard work and passion on the court.<br><br>
 
+            Today is your day—PAKITA MO NA IBA KA! 💙<br><br>
 
-You are such a great volleyball player and I love the fact that you work hard and put so much passion in everything you do on the field.
-            Have a good day this is your day, sayo ang araw na ’to! PAKITA MO NA IBA KA!
-            💙 Now that you are 18, you can now MAKULONG because you are now grown-up but more than that, I want you to continue with your dreams teh, be stronger, and never lose that fighting spirit.
-            😭 but more importantly, I hope you use this new chapter to keep chasing your dreams, grow stronger, and never lose that fighting spirit. 💙
+            Now that you are 18, pwede ka na makulong 😭😂<br><br>
+
+            But seriously, keep chasing your dreams, stay strong, and never lose that fighting spirit. 💙
         </p>
     </div>
 </div>
 
-<!-- BOTTOM GIFS -->
 <div class="gif-row">
-<img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif">
     <img src="https://media.giphy.com/media/26u4cqiYI30juCOGY/giphy.gif">
 </div>
 
-<!-- FOOTER -->
 <footer>
-    From kupal rikzards :} 💙
+    From kupal rikzards 💙
 </footer>
 
 </body>
